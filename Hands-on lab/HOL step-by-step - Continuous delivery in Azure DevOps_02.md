@@ -142,6 +142,14 @@ The Fabrikam Medical Conferences developer workflow has been improved. We are re
      ./seed-cosmosdb.ps1
      ```
        
+       >**Note:** If you face an error while running the above command, make sure to run the following commands and rerun the above line to execute the `seed-cosmosdb.ps1` PowerShell script.
+        
+        ```pwsh
+        az login
+        cd C:\Workspaces\lab\mcw-continuous-delivery-lab-files\infrastructure
+        
+        ```
+       
  11. Once the script execution is completed, Browse to the Azure Portal and navigate to **fabmedical-cdb-<inject key="DeploymentID" enableCopy="false" />** Cosmos DB resource and select **Data Explorer** from the left menu  and verify that the CosmosDB instance has been seeded.
 
      ![Azure CosmosDB contents displayed via the CosmosDB explorer in the Azure CosmosDB resource detail.](media/hol-ex2-task1-step9-1.png "Azure CosmosDB Seeded Contents")
@@ -243,7 +251,7 @@ The Fabrikam Medical Conferences developer workflow has been improved. We are re
 
 With the infrastructure in place, we can set up continuous deployment with GitHub Actions.
 
- 1. Go to Environment details click on **Service principle Credentials** copy **Application id(clientId)** , **clientSecret** , **subscriptionId** and **tenantId** 
+ 1. Go to Environment details click on **Service principle Credentials** copy **Application id(clientId)** , **clientSecret(secretkey)** , **subscriptionId** and **tenantId** 
     
      ![spcreds](https://raw.githubusercontent.com/CloudLabsAI-Azure/AIW-DevOps/main/Assets/sp-creds-auth.png)
     
